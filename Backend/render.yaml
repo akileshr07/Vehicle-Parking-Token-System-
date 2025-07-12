@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: vptsv1-backend
+    env: docker
+    plan: free
+    branch: main             # or your GitHub branch
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_URL
+        value: ${DB_URL}
+      - key: DB_USERNAME
+        value: ${DB_USERNAME}
+      - key: DB_PASSWORD
+        value: ${DB_PASSWORD}
+
