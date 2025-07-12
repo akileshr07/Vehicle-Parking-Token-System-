@@ -1,14 +1,12 @@
-# Use OpenJDK as base image
-FROM openjdk:17-jdk-slim
-
-# Set working directory
+# Stage 1: Build the app
+FROM gradle:8.2.1-jdk17 AS builder
 WORKDIR /app
+COPY . .
+RUN gradle build --no-daemon
 
-# Copy the built JAR into the image
-COPY build/libs/vptsv1-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose port
+# Stage 2: Run the app
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=builder /app/build/libs/*.jar app.jar
 EXPOSE 8080
-
-# Run the app with ENV-based DB config
 ENTRYPOINT ["java", "-jar", "app.jar"]
