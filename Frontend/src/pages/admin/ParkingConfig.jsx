@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Save, Car, Bike, Zap, MapPin } from 'lucide-react';
 import Loader from '../../components/Loader';
+import { BASE_URL } from '../../config/baseurl';
 
-export const BASE_URL = 'http://localhost:8080/api';
+// export const BASE_URL = 'http://localhost:8080/api';
 
 const ParkingConfig = () => {
   const [loading, setLoading] = useState(false);

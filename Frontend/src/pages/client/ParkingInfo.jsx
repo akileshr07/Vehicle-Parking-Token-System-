@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Car, Bike, Zap, MapPin, Clock, RefreshCw, Eye, X } from 'lucide-react';
 import Loader from '../../components/Loader';
 import TokenLookup from './TokenLookup';
+import { BASE_URL } from '../../config/baseurl';
 
-export const BASE_URL = 'http://localhost:8080/api';
+// export const BASE_URL = 'http://localhost:8080/api';
 
 const ParkingInfo = () => {
   const [parkingData, setParkingData] = useState(null);

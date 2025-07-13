@@ -1,0 +1,19 @@
+# Ignore Gradle cache and build directories
+.gradle/
+build/
+
+# Ignore IDE configs
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+bin/
+nbbuild/
+nbdist/
+.vscode/
+*.log
+
+# Ignore env and project metadata
+.env
+HELP.md

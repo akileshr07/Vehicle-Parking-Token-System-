@@ -12,8 +12,9 @@ import {
 import VehicleTag from "../../components/VehicleTag";
 import QRCodeImage from "../../components/QRCodeImage";
 import Loader from "../../components/Loader";
+import { BASE_URL } from '../../config/baseurl';
 
-export const BASE_URL = "http://localhost:8080/api";
+// export const BASE_URL = "http://localhost:8080/api";
 
 const TokenLookup = () => {
   const [token, setToken] = useState("");

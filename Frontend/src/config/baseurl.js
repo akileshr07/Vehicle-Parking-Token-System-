@@ -1,6 +1,6 @@
 // Backend base URL configuration
 // TODO: Update this URL to match your Spring Boot server
-export const BASE_URL = 'http://localhost:8080/api';
+export const BASE_URL = 'https://vptsv1-latest.onrender.com/api';
 
 // Alternative configurations for different environments:
 // Development: 'http://localhost:8080/api'

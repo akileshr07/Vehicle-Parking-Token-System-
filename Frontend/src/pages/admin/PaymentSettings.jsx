@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Save, CreditCard, Smartphone } from 'lucide-react';
 import QRCodeImage from '../../components/QRCodeImage';
 import Loader from '../../components/Loader';
+import { BASE_URL } from '../../config/baseurl';
 
-export const BASE_URL = 'http://localhost:8080/api';
+// export const BASE_URL = 'http://localhost:8080/api';
 
 const PaymentSettings = () => {
   const [loading, setLoading] = useState(false);

@@ -14,62 +14,8 @@ import {
 } from "lucide-react";
 import VehicleTag from "../../components/VehicleTag";
 import Loader from "../../components/Loader";
-/*
- * API INTEGRATION NOTES:
- * 
- * 1. Get All Vehicles:
- *    GET URL: http://localhost:8080/api/vehicles
- *    Response: {
- *      {
-    "total": 2,
-    "vehicles": [
-        {
-            "id": 5,
-            "type": "car",
-            "number": "TN01AB1234",
-            "token": "0C37BE",
-            "location": "Lot A - Section 1",
-            "status": "active",
-            "entryTime": "2025-07-11T19:08:22.20247",
-            "exitTime": null
-        },
-        {
-            "id": 7,
-            "type": "car",
-            "number": "TN01AB1234",
-            "token": "102896",
-            "location": "Lot A - Section 1",
-            "status": "active",
-            "entryTime": "2025-07-11T19:10:56.036738",
-            "exitTime": null
-        }
-    ],
-    "active": 2
-}
- * 
- * 2. Delete Vehicle:
- *    DELETE URL: http://localhost:8080/api/vehicles/{id}
+import { BASE_URL } from '../../config/baseurl';
 
- *    Response: { "success": true, "message": "Vehicle deleted successfully" }
- * 
- * 3. Add New Vehicle Entry:
- *    POST URL: http://localhost:8080/api/vehicles/entry
- *    Request: { "type": "car", "number": "TN01AB1234", "location": "Lot A" }
- *    Response: {
-    "success": true,
-    "message": "Vehicle entry recorded successfully",
-    "vehicle": {
-        "id": 8,
-        "type": "car",
-        "number": "TN01AB1234",
-        "token": "ED58C4",
-        "location": "Lot A - Section 1",
-        "status": "active",
-        "entryTime": "2025-07-11T19:16:38.4127076",
-        "exitTime": null
-    }
-}
- */
 const VehicleManager = () => {
   const [vehicles, setVehicles] = useState([]);
   const [filteredVehicles, setFilteredVehicles] = useState([]);
@@ -135,7 +81,7 @@ const VehicleManager = () => {
     filterAndSortVehicles();
   }, [vehicles, searchTerm, filterType, sortOrder]);
 
-  const BASE_URL = "http://localhost:8080/api";
+  // const BASE_URL = "http://localhost:8080/api";
 
   const fetchVehicles = async () => {
     setLoading(true);
